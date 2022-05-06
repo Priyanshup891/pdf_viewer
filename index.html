@@ -8,8 +8,20 @@
     <title>PDF Viewer</title>
 </head>
 <body>
+
+    <div class="container">
+        <nav class="nav">
+            <span>PDF Viewer</span>
+            <button id="prev-btn">&#8592; Previous</button>
+            <button id="next-btn">Next &#8594;</button>
+            <span>Page: <span id="page-num"></span> / <span id="page-count"></span></span>
+        </nav>
+
+        <canvas id="the-canvas"></canvas>
+    </div>
     
 
+    <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
     <script src="./javaScript/app.js"></script>
 </body>
 </html>
