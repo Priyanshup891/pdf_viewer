@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.nav{
+    display: flex;
+    gap: 2rem;
+}
+

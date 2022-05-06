@@ -42,8 +42,38 @@ function renderPage(num){
 
 }    
 
+function queueRenderPage(num){
+    if(pageRendering){
+        pageNumPending = num;
+    }else {
+        renderPage(num);
+    }
+}
+
+function onPrevPage(){
+    if(pageNum <= 1){
+        return;
+    }
+
+    pageNum--;
+    queueRenderPage(pageNum);
+}
 
 
+document.getElementById('prev-btn').addEventListener('click', onPrevPage)
+
+function onNextPage(){
+    if(pageNum >= pdfDoc.numPages){
+        return;
+    }
+
+    pageNum++;
+    queueRenderPage(pageNum);
+}
+
+
+
+document.getElementById('next-btn').addEventListener('click', onNextPage)
     
    
 pdfjsLib.getDocument(url).promise.then(function(pdfDoc_){
